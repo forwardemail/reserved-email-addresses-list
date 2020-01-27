@@ -44,7 +44,7 @@ The string you are comparing with must be converted to lowercase and trimmed of 
 const reservedEmailAddressesList = require('reserved-email-addresses-list');
 
 const str = 'Admin '.toLowerCase().trim();
-const match = reservedEmailAddresssesList.find(addr => addr === str || addr.startsWith(str) || addr.endsWith(str)))
+const match = reservedEmailAddresssesList.find(addr => addr === str || str.startsWith(addr) || str.endsWith(addr)))
 
 if (match) throw new Error(`${str} matched a reserved email address of ${match}`);
 ```
