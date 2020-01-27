@@ -40,16 +40,25 @@ yarn add reserved-email-addresses-list
 
 The string you are comparing with must be converted to lowercase, trimmed of whitespace, and strictly converted to alphanumeric characters only.
 
-It is also highly recommended that you check for strict equality, starts with, and ends with comparisons as well.
+It is also highly recommended that you check for strict equality, and for a list of admin-related usernames, you should check for strict equality, starts with, or ends with comparisons as well.
 
 ```js
 const reservedEmailAddressesList = require('reserved-email-addresses-list');
+const reservedAdminList = require('reserved-email-addresses-list/admin-list.json');
 
 const str = 'Admin***!!!'.toLowerCase().replace(/[^0-9a-z]/g, '');
 
-const reservedMatch = reservedEmailAddressesList.find(
-  addr => addr === str || str.startsWith(addr) || str.endsWith(addr)
-);
+let reservedMatch = reservedEmailAddressesList.find(addr => addr === str);
+
+if (!reservedMatch)
+  reservedMatch = reservedAdminList.find(
+    addr => addr === str || str.startsWith(addr) || str.endsWith(addr)
+  );
+
+if (reservedMatch)
+  throw new Error(
+    `User must be a domain admin to create an alias with a reserved word (see the page on <a target="_blank" rel="noopener" href="${config.urls.web}/reserved-email-addresses">Reserved Email Addresses</a>).`
+  );
 
 if (reservedMatch)
   throw new Error(`${str} matched a reserved email address of ${match}`);
@@ -70,6 +79,7 @@ See [index.json](<>) for the complete list of all reserved email addresses.
 * <https://gist.github.com/citrusui/d755cf6bf8374d413fe8f453fa40f0c6>
 * <https://www.npmjs.com/package/reserved-usernames>
 * <https://help.salesforce.com/articleView?id=pardot_admin_role_based_email_address.htm&type=5>
+* <https://www.entrustdatacard.com/blog/2015/march/what-happened-with-livefi>
 
 
 ## Contributors

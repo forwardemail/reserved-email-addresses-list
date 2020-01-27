@@ -38,7 +38,8 @@
     "node": ">=8.3"
   },
   "files": [
-    "index.json"
+    "index.json",
+    "admin-list.json"
   ],
   "homepage": "https://github.com/forwardemail/reserved-email-addresses-list",
   "husky": {
