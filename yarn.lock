@@ -5837,6 +5837,11 @@ require-precompiled@^0.1.0:
   resolved "https://registry.yarnpkg.com/require-precompiled/-/require-precompiled-0.1.0.tgz#5a1b52eb70ebed43eb982e974c85ab59571e56fa"
   integrity sha1-WhtS63Dr7UPrmC6XTIWrWVceVvo=
 
+reserved-email-addresses-list@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/reserved-email-addresses-list/-/reserved-email-addresses-list-0.0.3.tgz#e6ec99967824510830896cac80b873d3aabb1ebf"
+  integrity sha512-VCpP0UWkRAEzFo96vdH3G7ZVrxztDrZlqk4T8GZ4yWsTqVhc8XWpmEypWm2fud4aY9ZfDiKjlP1hvEDE5bHruA==
+
 reserved-words@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/reserved-words/-/reserved-words-0.1.2.tgz#00a0940f98cd501aeaaac316411d9adc52b31ab1"

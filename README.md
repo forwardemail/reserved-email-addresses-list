@@ -46,9 +46,13 @@ It is also highly recommended that you check for strict equality, starts with, a
 const reservedEmailAddressesList = require('reserved-email-addresses-list');
 
 const str = 'Admin***!!!'.toLowerCase().replace(/[^0-9a-z]/g, '');
-const match = reservedEmailAddresssesList.find(addr => addr === str || str.startsWith(addr) || str.endsWith(addr)))
 
-if (match) throw new Error(`${str} matched a reserved email address of ${match}`);
+const reservedMatch = reservedEmailAddressesList.find(
+  addr => addr === str || str.startsWith(addr) || str.endsWith(addr)
+);
+
+if (reservedMatch)
+  throw new Error(`${str} matched a reserved email address of ${match}`);
 ```
 
 
