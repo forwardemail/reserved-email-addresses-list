@@ -38,12 +38,14 @@ yarn add reserved-email-addresses-list
 
 ## Usage
 
-The string you are comparing with must be converted to lowercase and trimmed of whitespace.  It is also highly recommended that you check for strict equality, starts with, and ends with comparisons as well.
+The string you are comparing with must be converted to lowercase, trimmed of whitespace, and strictly converted to alphanumeric characters only.
+
+It is also highly recommended that you check for strict equality, starts with, and ends with comparisons as well.
 
 ```js
 const reservedEmailAddressesList = require('reserved-email-addresses-list');
 
-const str = 'Admin '.toLowerCase().trim();
+const str = 'Admin***!!!'.toLowerCase().replace(/[^0-9a-z]/g, '');
 const match = reservedEmailAddresssesList.find(addr => addr === str || str.startsWith(addr) || str.endsWith(addr)))
 
 if (match) throw new Error(`${str} matched a reserved email address of ${match}`);
