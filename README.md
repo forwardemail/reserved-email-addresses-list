@@ -26,27 +26,29 @@
 [npm][]:
 
 ```sh
-npm install reserved-email-addresses-list
+npm install reserved-email-addresses-list validator
 ```
 
 [yarn][]:
 
 ```sh
-yarn add reserved-email-addresses-list
+yarn add reserved-email-addresses-list validator
 ```
 
 
 ## Usage
 
-The string you are comparing with must be converted to lowercase, trimmed of whitespace, and strictly converted to alphanumeric characters only.
+The string you are comparing with must be converted to lowercase and trimmed of whitespace. The reason we are converting to lowercase is because the dictionary of words we are comparing with are all lowercase, and in order to compare for strict equality, we must have matching case.
 
 It is also highly recommended that you check for strict equality, and for a list of admin-related usernames, you should check for strict equality, starts with, or ends with comparisons as well.
 
 ```js
-const reservedEmailAddressesList = require('reserved-email-addresses-list');
-const reservedAdminList = require('reserved-email-addresses-list/admin-list.json');
+const email = 'Admin***!!!@example.com';
 
-const str = 'Admin***!!!'.toLowerCase().replace(/[^0-9a-z]/g, '');
+if (!validator.isEmail(email))
+  throw new Error('Email was not a valid address');
+
+const str = email.split('@')[0].toLowerCase();
 
 let reservedMatch = reservedEmailAddressesList.find(addr => addr === str);
 
@@ -57,17 +59,14 @@ if (!reservedMatch)
 
 if (reservedMatch)
   throw new Error(
-    `User must be a domain admin to create an alias with a reserved word (see the page on <a target="_blank" rel="noopener" href="${config.urls.web}/reserved-email-addresses">Reserved Email Addresses</a>).`
+    'User must be a domain admin to create an alias with a reserved word (see https://forwardemail.net/reserved-email-addresses).'
   );
-
-if (reservedMatch)
-  throw new Error(`${str} matched a reserved email address of ${match}`);
 ```
 
 
 ## List
 
-See [index.json](index.json) for the complete list of all reserved email addresses.
+See [index.json](index.json) for the complete list of all reserved email addresses, and [admin-list.json](admin-list.json) for the list of all reserved admin names.
 
 
 ## References
