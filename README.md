@@ -67,7 +67,7 @@ if (reservedMatch)
 
 ## List
 
-See [index.json](<>) for the complete list of all reserved email addresses.
+See [index.json](index.json) for the complete list of all reserved email addresses.
 
 
 ## References
