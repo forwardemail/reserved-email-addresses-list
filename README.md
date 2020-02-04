@@ -32,7 +32,7 @@ npm install reserved-email-addresses-list validator nodemailer
 [yarn][]:
 
 ```sh
-yarn add reserved-email-addresses-list validator nodemailer
+yarn add reserved-email-addresses-list email-addresses
 ```
 
 
@@ -45,34 +45,15 @@ It is also highly recommended that you check for strict equality, and for a list
 ```js
 const reservedEmailAddressesList = require('reserved-email-addresses-list');
 const reservedAdminList = require('reserved-email-addresses-list/admin-list.json');
-const validator = require('validator');
+const emailAddresses = require('email-addresses');
 
 const email = '"Admin***!!!"@example.com';
+const parsed = emailAddresses.parseOneAddress(email);
 
-//
-// NOTE: No current npm package validates an address properly to RFC/IDN spec
-// however according to research in the link below, the `validator` library
-// has the highest percentage of passing tests across edge cases
-//
-// <https://webmasters.stackexchange.com/questions/104811/is-there-any-list-of-email-addresses-reserved-because-of-security-concerns-for-a/127447#comment173697_127447>
-//
-if (!validator.isEmail(email))
+if (parsed === null)
   throw new Error('Email was not a valid address');
 
-//
-// NOTE: No current npm package properly parses the local part of an email
-// address, therefore we write some custom logic here to get the last @ symbol
-// and then slice the string from 0 (first character) to the @ symbol)
-//
-// The problem is that packages parse based off the first `indexOf`
-// and not the `lastIndexOf`, so therefore errors like this would occur:
-// e.g. this is a valid email address: `"test@test.test"@example.com`,
-// but it is parsed incorrectly by all packages
-//
-// <https://github.com/nodemailer/nodemailer/issues/1102>
-//
-const lastIndexOfAtSymbol = email.lastIndexOf('@');
-const str = email.slice(0, lastIndexOfAtSymbol).toLowerCase();
+const str = parsed.local.toLowerCase();
 
 let reservedMatch = reservedEmailAddressesList.find(addr => addr === str);
 
