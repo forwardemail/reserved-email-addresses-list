@@ -15,9 +15,7 @@
   "contributors": [
     "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)"
   ],
-  "dependencies": {
-    "reserved-email-addresses-list": "^0.0.3"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
