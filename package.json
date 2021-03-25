@@ -25,7 +25,7 @@
     "eslint": "latest",
     "eslint-config-xo-lass": "latest",
     "fixpack": "latest",
-    "husky": "3.x",
+    "husky": "^5.2.0",
     "lint-staged": "latest",
     "nyc": "latest",
     "remark-cli": "latest",

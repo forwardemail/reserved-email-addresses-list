@@ -26,7 +26,7 @@
 [npm][]:
 
 ```sh
-npm install reserved-email-addresses-list validator nodemailer
+npm install reserved-email-addresses-list email-addresses
 ```
 
 [yarn][]:
@@ -98,7 +98,7 @@ See [index.json](index.json) for the complete list of all reserved email address
 [MIT](LICENSE) © [Nick Baugh](http://niftylettuce.com/)
 
 
-## 
+##
 
 [npm]: https://www.npmjs.com/
 
