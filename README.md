@@ -81,7 +81,7 @@ const reservedEmailAddressesList = require('reserved-email-addresses-list');
 // Map version
 const reservedEmailAddressesMap = require('reserved-email-addresses-list/map');
 
-// set version
+// Set version
 const reservedEmailAddressesSet = require('reserved-email-addresses-list/set');
 ```
 
