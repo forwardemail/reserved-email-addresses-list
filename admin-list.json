@@ -1,10 +1,12 @@
 [
+  "adm"
   "admin",
   "administrator",
-  "webmaster",
   "hostmaster",
   "postmaster",
-  "tld-admin",
-  "dns-operation",
-  "ssl"
+  "security"
+  "ssl",
+  "webmaster"
+  "administration"
+  "abuse"
 ]
