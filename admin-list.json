@@ -1,12 +1,12 @@
 [
+  "abuse"
   "adm"
   "admin",
+  "administration",
   "administrator",
   "hostmaster",
   "postmaster",
-  "security"
-  "ssl",
-  "webmaster"
-  "administration"
-  "abuse"
+  "security",
+  "ssl",,
+  "webmaster",
 ]
