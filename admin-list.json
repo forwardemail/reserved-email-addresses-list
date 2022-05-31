@@ -4,5 +4,7 @@
   "webmaster",
   "hostmaster",
   "postmaster",
+  "tld-admin",
+  "dns-operation",
   "ssl"
 ]
