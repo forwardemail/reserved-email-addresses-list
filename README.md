@@ -15,6 +15,7 @@
 
 * [Install](#install)
 * [Usage](#usage)
+  * [Formats](#formats)
 * [List](#list)
 * [References](#references)
 * [Contributors](#contributors)
@@ -66,6 +67,22 @@ if (reservedMatch)
   throw new Error(
     'User must be a domain admin to create an alias with a reserved word (see https://forwardemail.net/reserved-email-addresses).'
   );
+```
+
+### Formats
+
+The list itself comes in a few different formats. The default import is an `Array`, but also available are a `Map` and `Set` version of the list.
+
+```js
+// Array version
+const reservedEmailAddressesList = require('reserved-email-addresses-list');
+// Also available with: require('reserved-email-addresses-list/array');
+
+// Map version
+const reservedEmailAddressesMap = require('reserved-email-addresses-list/map');
+
+// Set version
+const reservedEmailAddressesSet = require('reserved-email-addresses-list/set');
 ```
 
 

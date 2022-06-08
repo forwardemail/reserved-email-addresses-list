@@ -35,9 +35,27 @@
   "engines": {
     "node": ">=8.3"
   },
+  "exports": {
+    ".": "./index.json",
+    "./admin-list": "./admin-list.json",
+    "./admin-list.json": "./admin-list.json",
+    "./array": "./index.json",
+    "./map": {
+      "import": "./map.mjs",
+      "require": "./map.cjs"
+    },
+    "./set": {
+      "import": "./set.mjs",
+      "require": "./set.cjs"
+    }
+  },
   "files": [
     "index.json",
-    "admin-list.json"
+    "admin-list.json",
+    "map.cjs",
+    "map.mjs",
+    "set.cjs",
+    "set.mjs"
   ],
   "homepage": "https://github.com/forwardemail/reserved-email-addresses-list",
   "husky": {
@@ -110,6 +128,14 @@
     "space": true,
     "extends": [
       "xo-lass"
+    ],
+    "overrides": [
+      {
+        "files": "*.mjs",
+        "parserOptions": {
+          "sourceType": "module"
+        }
+      }
     ]
   }
 }
