@@ -15,22 +15,21 @@
   "contributors": [
     "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)"
   ],
-  "dependencies": {},
   "devDependencies": {
-    "@commitlint/cli": "latest",
-    "@commitlint/config-conventional": "latest",
-    "ava": "2.x",
-    "codecov": "latest",
-    "cross-env": "latest",
-    "eslint": "latest",
-    "eslint-config-xo-lass": "latest",
-    "fixpack": "latest",
-    "husky": "^5.2.0",
-    "lint-staged": "latest",
-    "nyc": "latest",
-    "remark-cli": "latest",
-    "remark-preset-github": "latest",
-    "xo": "latest"
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "ava": "^4.3.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.17.0",
+    "eslint-config-xo-lass": "^2.0.1",
+    "fixpack": "^4.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.1",
+    "nyc": "^15.1.0",
+    "prettier": "^2.6.2",
+    "remark-cli": "^10.0.1",
+    "remark-preset-github": "^4.0.4",
+    "xo": "^0.49.0"
   },
   "engines": {
     "node": ">=8.3"
@@ -58,12 +57,6 @@
     "set.mjs"
   ],
   "homepage": "https://github.com/forwardemail/reserved-email-addresses-list",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && npm test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "keywords": [
     "address",
     "addresses",
@@ -86,56 +79,16 @@
     "words"
   ],
   "license": "MIT",
-  "lint-staged": {
-    "*.js": [
-      "xo --fix",
-      "git add"
-    ],
-    "*.md": [
-      "remark . -qfo",
-      "git add"
-    ],
-    "package.json": [
-      "fixpack",
-      "git add"
-    ]
-  },
   "main": "index.json",
-  "prettier": {
-    "singleQuote": true,
-    "bracketSpacing": true,
-    "trailingComma": "none"
-  },
-  "remarkConfig": {
-    "plugins": [
-      "preset-github"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/forwardemail/reserved-email-addresses-list"
   },
   "scripts": {
     "ava": "cross-env NODE_ENV=test ava",
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "lint": "xo && remark . -qfo",
-    "nyc": "cross-env NODE_ENV=test nyc ava",
-    "test": "yarn run lint && yarn run ava",
-    "test-coverage": "yarn run lint && yarn run nyc"
-  },
-  "xo": {
-    "prettier": true,
-    "space": true,
-    "extends": [
-      "xo-lass"
-    ],
-    "overrides": [
-      {
-        "files": "*.mjs",
-        "parserOptions": {
-          "sourceType": "module"
-        }
-      }
-    ]
+    "lint": "xo --fix && remark . -qfo && fixpack && prettier --check *.json",
+    "prepare": "husky install",
+    "pretest": "npm run lint",
+    "test": "cross-env NODE_ENV=test nyc ava"
   }
 }
