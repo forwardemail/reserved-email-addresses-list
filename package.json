@@ -1,7 +1,7 @@
 {
   "name": "reserved-email-addresses-list",
   "description": "List of 1250+ email addresses reserved for security concerns",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)",
   "bugs": {
     "url": "https://github.com/forwardemail/reserved-email-addresses-list/issues",
