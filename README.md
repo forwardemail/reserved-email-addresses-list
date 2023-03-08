@@ -7,7 +7,7 @@
 [![license](https://img.shields.io/github/license/forwardemail/reserved-email-addresses-list.svg)](LICENSE)
 [![npm downloads](https://img.shields.io/npm/dt/reserved-email-addresses-list.svg)](https://npm.im/reserved-email-addresses-list)
 
-> List of 1250+ email addresses, admin usernames, and mailer daemon usernames reserved for security concerns.  **Made for [Forward Email](https://forwardemail.net).**
+> List of 1250+ generic, admin, mailer-daemon, and no-reply usernames reserved for security concerns.  **Made for [Forward Email](https://forwardemail.net).**
 
 
 ## Table of Contents
@@ -34,7 +34,7 @@ npm install reserved-email-addresses-list email-addresses
 
 The string you are comparing with must be converted to lowercase and trimmed of whitespace. The reason we are converting to lowercase is because the dictionary of words we are comparing with are all lowercase, and in order to compare for strict equality, we must have matching case.
 
-It is also highly recommended that you check for strict equality, and for a list of admin-related and mailer-daemon usernames, you should check for strict equality, starts with, or ends with comparisons as well.
+It is also highly recommended that you check for strict equality, and for a list of admin, mailer-daemon, and no-reply usernames, you should check for strict equality, starts with, or ends with comparisons as well.
 
 ```js
 const reservedEmailAddressesList = require('reserved-email-addresses-list');
@@ -64,8 +64,8 @@ if (reservedMatch)
 
 ## Lists
 
-* [index.json](index.json) - list of all reserved email addresses (**includes [admin-list.json](admin-list.json)**)
-* [admin-list.json](admin-list.json) - list of all reserved admin names and mailer-daemon usernames
+* [index.json](index.json) - list of all reserved generic usernames (**includes [admin-list.json](admin-list.json)**)
+* [admin-list.json](admin-list.json) - list of all reserved admin, mailer-daemon, and no-reply usernames
 
 ### Formats
 
