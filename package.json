@@ -1,7 +1,7 @@
 {
   "name": "reserved-email-addresses-list",
   "description": "List of 1250+ generic, admin, mailer-daemon, and no-reply usernames reserved for security concerns. Made for Forward Email <https//forwardemail.net>.",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)",
   "bugs": {
     "url": "https://github.com/forwardemail/reserved-email-addresses-list/issues",
