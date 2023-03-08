@@ -7,6 +7,8 @@
   "administrator",
   "alert",
   "alerts",
+  "announcement",
+  "announcements",
   "app",
   "backup",
   "backups",
@@ -79,7 +81,10 @@
   "inquirys",
   "list",
   "list-request",
+  "list-sender",
   "list.request",
+  "listrequest",
+  "listsender",
   "local",
   "local-domain",
   "local-host",
@@ -202,5 +207,6 @@
   "whois-privacy",
   "whois.privacy",
   "whoisprivacy",
-  "www"
+  "www",
+  "www-data"
 ]
