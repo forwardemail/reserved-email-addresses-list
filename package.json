@@ -1,6 +1,6 @@
 {
   "name": "reserved-email-addresses-list",
-  "description": "List of 1250+ email addresses reserved for security concerns",
+  "description": "List of 1250+ email addresses, admin usernames, and mailer daemon usernames reserved for security concerns. Made for Forward Email <https//forwardemail.net>.",
   "version": "1.0.4",
   "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)",
   "bugs": {
@@ -38,6 +38,8 @@
     ".": "./index.json",
     "./admin-list": "./admin-list.json",
     "./admin-list.json": "./admin-list.json",
+    "./mailer-daemon": "./mailer-daemon.json",
+    "./mailer-daemon.json": "./mailer-daemon.json",
     "./array": "./index.json",
     "./map": {
       "import": "./map.mjs",
@@ -51,6 +53,7 @@
   "files": [
     "index.json",
     "admin-list.json",
+    "mailer-daemon.json",
     "map.cjs",
     "map.mjs",
     "set.cjs",
@@ -60,17 +63,22 @@
   "keywords": [
     "address",
     "addresses",
+    "daemon",
     "domain",
     "email",
     "first",
     "gmail",
     "google",
+    "hostmaster",
     "list",
     "local",
     "localpart",
     "mail",
+    "mail",
+    "mailer",
     "names",
     "part",
+    "postmaster",
     "reserved",
     "smtp",
     "subdomain",

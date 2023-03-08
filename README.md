@@ -7,15 +7,15 @@
 [![license](https://img.shields.io/github/license/forwardemail/reserved-email-addresses-list.svg)](LICENSE)
 [![npm downloads](https://img.shields.io/npm/dt/reserved-email-addresses-list.svg)](https://npm.im/reserved-email-addresses-list)
 
-> List of 1250+ email addresses reserved for security concerns
+> List of 1250+ email addresses, admin usernames, and mailer daemon usernames reserved for security concerns.  **Made for [Forward Email](https://forwardemail.net).**
 
 
 ## Table of Contents
 
 * [Install](#install)
 * [Usage](#usage)
+* [Lists](#lists)
   * [Formats](#formats)
-* [List](#list)
 * [References](#references)
 * [Contributors](#contributors)
 * [License](#license)
@@ -34,7 +34,7 @@ npm install reserved-email-addresses-list email-addresses
 
 The string you are comparing with must be converted to lowercase and trimmed of whitespace. The reason we are converting to lowercase is because the dictionary of words we are comparing with are all lowercase, and in order to compare for strict equality, we must have matching case.
 
-It is also highly recommended that you check for strict equality, and for a list of admin-related usernames, you should check for strict equality, starts with, or ends with comparisons as well.
+It is also highly recommended that you check for strict equality, and for a list of admin-related and mailer-daemon usernames, you should check for strict equality, starts with, or ends with comparisons as well.
 
 ```js
 const reservedEmailAddressesList = require('reserved-email-addresses-list');
@@ -44,8 +44,7 @@ const emailAddresses = require('email-addresses');
 const email = '"Admin***!!!"@example.com';
 const parsed = emailAddresses.parseOneAddress(email);
 
-if (parsed === null)
-  throw new Error('Email was not a valid address');
+if (parsed === null) throw new Error('Email was not a valid address');
 
 const str = parsed.local.toLowerCase();
 
@@ -62,9 +61,15 @@ if (reservedMatch)
   );
 ```
 
+
+## Lists
+
+* [index.json](index.json) - list of all reserved email addresses (**includes [admin-list.json](admin-list.json)**)
+* [admin-list.json](admin-list.json) - list of all reserved admin names and mailer-daemon usernames
+
 ### Formats
 
-The list itself comes in a few different formats. The default import is an `Array`, but also available are a `Map` and `Set` version of the list.
+The default list [index.json](index.json) itself comes in a few different formats. The default import is an `Array`, but also available are a `Map` and `Set` version of the list.
 
 ```js
 // Array version
@@ -78,14 +83,13 @@ const reservedEmailAddressesMap = require('reserved-email-addresses-list/map');
 const reservedEmailAddressesSet = require('reserved-email-addresses-list/set');
 ```
 
-
-## List
-
-See [index.json](index.json) for the complete list of all reserved email addresses, and [admin-list.json](admin-list.json) for the list of all reserved admin names.
+If you would like to create a Map or Set version of the other lists, simply require them first, and then convert to a `Set` or `Map` (see [map.cjs](map.cjs), [set.cjs](set.cjs), and other files in this repo for more insight how to do this).
 
 
 ## References
 
+* <https://www.rfc-editor.org/rfc/rfc2142>
+* <https://unix.stackexchange.com/q/65013>
 * <https://webmasters.stackexchange.com/questions/104811/is-there-any-list-of-email-addresses-reserved-because-of-security-concerns-for-a?noredirect=1&lq=1>
 * <https://support.google.com/a/answer/6093413?hl=en>
 * <https://docs.google.com/spreadsheets/d/1Gj1LidTJgA1TgOjhxTaoQKaZTvV2-xZlvo9XEsBnZ5I/edit#gid=0>
