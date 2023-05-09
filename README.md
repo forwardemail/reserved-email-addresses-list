@@ -64,8 +64,9 @@ if (reservedMatch)
 
 ## Lists
 
-* [index.json](index.json) - list of all reserved generic usernames (**includes [admin-list.json](admin-list.json)**)
-* [admin-list.json](admin-list.json) - list of all reserved admin, mailer-daemon, and no-reply usernames
+* [index.json](index.json) - list of all reserved generic usernames (**includes [admin-list.json](admin-list.json) and [no-reply-list.json](no-reply-list.json)**)
+* [admin-list.json](admin-list.json) - list of all reserved admin and mailer-daemon usernames (**includes [no-reply-list.json](no-reply-list.json)**)
+* [no-reply-list.json](no-reply-list.json) - list of all no-reply usernames
 
 ### Formats
 

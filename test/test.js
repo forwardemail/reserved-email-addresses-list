@@ -1,5 +1,4 @@
 const test = require('ava');
-
 const list = require('reserved-email-addresses-list');
 const array = require('reserved-email-addresses-list/array');
 const map = require('reserved-email-addresses-list/map');
