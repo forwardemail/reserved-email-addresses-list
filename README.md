@@ -18,7 +18,6 @@
 * [🛡️ Security Features](#️-security-features)
   * [Unicode Homograph Protection](#unicode-homograph-protection)
   * [International Support](#international-support)
-* [Table of Contents](#table-of-contents-1)
 * [🚀 Quick Start](#-quick-start)
 * [📦 Installation](#-installation)
   * [npm](#npm)
@@ -94,49 +93,6 @@ Properly protects translated administrative terms:
 * **Spanish**: `administracion`, `contacto`, `soporte`, `conserje`
 * **French**: `administration`, `ne-pas-repondre`
 * **System variants**: `sys.administrator`, `sysadministrator`, `system-administrator`
-
-
-## Table of Contents
-
-* [🚀 Quick Start](#-quick-start)
-* [📦 Installation](#-installation)
-  * [npm](#npm)
-  * [yarn](#yarn)
-  * [pnpm](#pnpm)
-* [💡 Usage](#-usage)
-  * [Basic Usage](#basic-usage)
-  * [Advanced Security Checks](#advanced-security-checks)
-  * [Unicode-Safe Validation](#unicode-safe-validation)
-* [📋 Lists](#-lists)
-  * [List Types](#list-types)
-  * [Formats Available](#formats-available)
-  * [Statistics](#statistics)
-* [🛡️ Security](#️-security)
-  * [Unicode Homograph Protection](#unicode-homograph-protection-1)
-  * [Attack Prevention Examples](#attack-prevention-examples)
-  * [Supported Unicode Scripts](#supported-unicode-scripts)
-* [🌍 International Support](#-international-support)
-  * [Supported Languages](#supported-languages)
-  * [Translation Examples](#translation-examples)
-* [⚡ Performance](#-performance)
-  * [Lookup Performance](#lookup-performance)
-  * [Benchmarks](#benchmarks)
-* [🔄 What"s New](#-whats-new)
-  * [Latest Enhancements](#latest-enhancements)
-  * [Upgrading](#upgrading)
-* [📚 API Reference](#-api-reference)
-  * [Main Exports](#main-exports)
-  * [Specialized Lists](#specialized-lists)
-  * [TypeScript Support](#typescript-support)
-* [🔗 References](#-references)
-  * [Standards & RFCs](#standards--rfcs)
-  * [Security Research](#security-research)
-  * [Industry Resources](#industry-resources)
-  * [Community Resources](#community-resources)
-  * [Historical Context](#historical-context)
-* [👥 Contributors](#-contributors)
-  * [Contributing](#contributing)
-* [📄 License](#-license)
 
 
 ## 🚀 Quick Start
@@ -289,8 +245,8 @@ console.log(isReservedUnicodeSafe("ａdmin@example.com"));  // Fullwidth "ａ"
 
 | List                                         | Entries | Description                            | Use Case                    |
 | -------------------------------------------- | ------- | -------------------------------------- | --------------------------- |
-| **[index.json](index.json)**                 | 983     | Complete list including all variations | General email validation    |
-| **[admin-list.json](admin-list.json)**       | 1,891   | Admin, security, and system accounts   | Administrative protection   |
+| **[index.json](index.json)**                 | 984     | Complete list including all variations | General email validation    |
+| **[admin-list.json](admin-list.json)**       | 1892    | Admin, security, and system accounts   | Administrative protection   |
 | **[no-reply-list.json](no-reply-list.json)** | 347     | No-reply and automated email addresses | Automated system protection |
 
 > \[!NOTE]
